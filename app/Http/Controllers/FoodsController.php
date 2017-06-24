@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Meal;
+
+use App\User;
+
+use App\Food;
+
 class FoodsController extends Controller
 {
     /**
@@ -33,11 +39,11 @@ class FoodsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Meal $meal)
+    public function store(Request $request, Food $food, Meal $meal)
     {
         //
         $this->validate($request, [
-          'meal' => 'required'
+          'name', 'protein', 'carbohydrates', 'fat' => 'required'
         ]);
 
         $food = new Food($request->all());

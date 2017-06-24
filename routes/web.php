@@ -23,4 +23,4 @@ Route::resource('/meals', 'MealsController');
 
 Route::post('/users/{user}/meals', 'MealsController@store');
 
-Route::post('/meals/{meal}/foods', 'FoodsController@create');
+Route::post('/meals/{meal}/foods', 'FoodsController@store');
