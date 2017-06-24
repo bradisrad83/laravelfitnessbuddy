@@ -21,5 +21,10 @@ class Meal extends Model
       //Food singular because it belongs directly to that class
       return $this->hasMany(Food::class);
     }
+    public function totalCalories() {
+        $foods=$this->foods()->get();
+        // dump($foods);die();
+        return $foods[0]->calories();
+    }
 
 }

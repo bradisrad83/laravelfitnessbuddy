@@ -10,7 +10,7 @@
     </span>
     <br>
     <span class="data label label-pill label-primary">
-      {{ $meal->calories }} kCal
+      {{ $meal->totalCalories() }} kCal
     </span>
 
     <span class="meal-data label label-pill label-default">
