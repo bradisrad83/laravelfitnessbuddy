@@ -8,10 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>MyFitnessBuddy</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -34,7 +35,7 @@
                     <a class="navbar-brand" href="{{ url('/meals/create') }}">
                       Add Meal
                     </a>
-                    <a class="navbar-brand" href="{{ url('/showAllMeals') }}">
+                    <a class="navbar-brand" href="{{ url('/meals') }}">
                       All Meals
                     </a>
                 </div>
@@ -77,7 +78,9 @@
             </div>
         </nav>
 
+      <div class="container">
         @yield('content')
+      </div>
     </div>
 
     <!-- Scripts -->

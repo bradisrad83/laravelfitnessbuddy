@@ -1,28 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-{{--
+
   <div class="meal-info">
     <h2 class="meal-name">{{ $meal->name }}&nbsp;</h2>
 
     <span class = "meal-time">
-      {{ $meal->created_at->format('1, F jS, Y') }}
+      Created At:  {{ $meal->created_at->format('F jS, Y')}}
     </span>
     <br>
-    <span class="meal-data label label-pill label-primary">
-      {{ $meal->calories() }} kCal
+    <span class="data label label-pill label-primary">
+      {{ $meal->calories }} kCal
     </span>
 
     <span class="meal-data label label-pill label-default">
-      {{ $meal->protein() }}g Protein
+      {{ $meal->protein }}g Protein
     </span>
 
     <span class="meal-data label label-pill label-default">
-      {{ $meal->carbohydrates() }}g Carbohydrates
+      {{ $meal->carbohydrates }}g Carbohydrates
     </span>
 
     <span class="meal-data label label-pill label-default">
-      {{ $meal->fat() }}g Fat
+      {{ $meal->fat }}g Fat
     </span>
   </div>
   <hr>
@@ -35,7 +35,7 @@
           {{ $food->name }}
 
           <span class="food-pcf pull-right">
-            {{ $food->protein }}:{{ $food->carbohydrates }}:{{ $food->fat}}
+            {{ $food->protein }} g/Protein:  {{ $food->carbohydrates }} g/Carbohydrates:  {{ $food->fat}} g/Fat: Added: {{$food->created_at->format('H:i:s')}}
           </span>
         </li>
       @endforeach
@@ -45,7 +45,7 @@
   @endif
 
   <hr>
---}}
+
   <form action="/meals/{{ $meal->id }}/foods" method="POST">
     {{ csrf_field() }}
 

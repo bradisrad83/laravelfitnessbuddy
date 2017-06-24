@@ -5,7 +5,7 @@
 
 <hr>
 
-<form action="/users/{{ $user->id}}/meals" method="POST">
+<form action="/meals" method="POST">
 
     {{ csrf_field() }}
 
@@ -26,3 +26,5 @@
       </div>
     </div>
   </form>
+
+  @stop

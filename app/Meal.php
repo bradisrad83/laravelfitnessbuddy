@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Meal extends Model
 {
     //Attributes that are mass-assignable
-    protected $fillable =['name'];
+    protected $fillable =['name','user_id'];
 
     //defines relationship to user class
     public function user() {
       //Meal Model belongs to User Model
       return $this->belongsTo(User::class);
     }
-    
+
     //defines relation to food class
     public function foods() {
       //foods plural because there are many foods

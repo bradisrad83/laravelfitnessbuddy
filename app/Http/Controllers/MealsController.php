@@ -46,7 +46,7 @@ class MealsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, User $user)
+    public function store(Request $request)
     {
         //Laravel validation-------name is required
         $this->validate($request, [
@@ -54,8 +54,13 @@ class MealsController extends Controller
         ]);
         //Create the new meal
         //Taking advantage of the fact that we've set name to be mass-assignable
-        $meal = new Meal($request->all());
-        $user->meals()->save($meal);
+
+        $name = $request->get('name');
+        $user_id = $request->user()->id;
+
+        $meal = new Meal(['name'=>$name, 'user_id'=>$user_id]);
+        $meal->save();
+
 
         //Send a Response
         return redirect()->action("MealsController@show", $meal->id);

@@ -48,6 +48,8 @@ class FoodsController extends Controller
 
         $food = new Food($request->all());
         $meal->foods()->save($food);
+
+        return redirect()->action("MealsController@show", $meal->id);
     }
 
     /**
