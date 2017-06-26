@@ -17,7 +17,4 @@ class Food extends Model
     public function calories() {
         return( ($this->protein * 4) + ($this->carbohydrates * 4) + ($this->fat * 9));
     }
-    public function fat() {
-      return ($this->fat);
-    }
 }

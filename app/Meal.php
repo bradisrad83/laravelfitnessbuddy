@@ -23,7 +23,7 @@ class Meal extends Model
     }
     public function totalCalories() {
         $foods=$this->foods()->get();
-        // dump($foods);die();
+      //  dump($foods);die();
         return $foods[0]->calories();
     }
 
