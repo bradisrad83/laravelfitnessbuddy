@@ -21,10 +21,44 @@ class Meal extends Model
       //Food singular because it belongs directly to that class
       return $this->hasMany(Food::class);
     }
+    //function to get the total calories(kCal)
     public function totalCalories() {
+        $cal=0;
         $foods=$this->foods()->get();
-      //  dump($foods);die();
-        return $foods[0]->calories();
+        foreach($foods as $food) {
+          $cal+=($food->calories());
+        }
+        return $cal;
+
     }
+    //function to get total proteins
+    public function totalProtein() {
+      $totalprotein = 0;
+      $foods=$this->foods()->get();
+      foreach($foods as $protein){
+        $totalprotein+=($protein->protein());
+      }
+      return $totalprotein;
+    }
+    //function to get total carbohydrates
+    public function totalCarb() {
+      $totalcarb = 0;
+      $foods=$this->foods()->get();
+      foreach($foods as $carb){
+        $totalcarb+=($carb->carbohydrates());
+      }
+      return $totalcarb;
+    }
+    //function to get the total fat
+    public function totalFat() {
+      $totalfat = 0;
+      $foods=$this->foods()->get();
+      foreach($foods as $fat){
+        $totalfat+=($fat->fat());
+      }
+      return $totalfat;
+    }
+
+
 
 }

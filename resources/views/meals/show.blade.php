@@ -14,15 +14,15 @@
     </span>
 
     <span class="meal-data label label-pill label-default">
-      {{ $meal->protein }}g Protein
+      {{ $meal->totalProtein() }}g Protein
     </span>
 
     <span class="meal-data label label-pill label-default">
-      {{ $meal->carbohydrates }}g Carbohydrates
+      {{ $meal->totalCarb() }}g Carbohydrates
     </span>
 
     <span class="meal-data label label-pill label-default">
-      {{ $meal->fat }}g Fat
+      {{ $meal->totalFat() }}g Fat
     </span>
   </div>
   <hr>
