@@ -78,6 +78,9 @@
             @endif
 
             <div class="content">
+              <div class = "title m-b-md">
+                MyFitnessBuddy
+              </div>
             </div>
         </div>
     </body>
